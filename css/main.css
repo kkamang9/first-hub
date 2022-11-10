@@ -213,18 +213,137 @@ body {font: 16px / 1 'NanumSquare', sans-serif, '돋움', dotum, AppleGothic, sa
 /* VISUAL - E */
 
 /* PRODUCT - S */
-.product{}
-.product-wrap{}
+.product{
+}
+.product-wrap{
+  padding: 0 100px;
+  
+}
 .product-list{
   float: left;
+  width: 227px; height: 205px;
+  padding-top: 270px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
-.product-box{}
-.product-box .product-box-tit{}
-.product-box .product-box-wrap{}
-.product-box .product-box-icon{}
-.product-box .product-box-contents{}
-.product-box .product-box-contents p{}
-.product-box .product-box-contents a{}
+/* 동생에게 명령하는 선택자 */
+.product-list + .product-list{
+  margin-left: 24px;
+}
+.product-list:nth-child(1){
+  background-image: url(../img/img_product_about.jpg);
+}
+.product-list:nth-child(2){
+  background-image: url(../img/img_product_bakery.jpg);
+}
+.product-list:nth-child(3){
+  background-image: url(../img/img_product_global.jpg);
+}
+.product-list:nth-child(4){
+  background-image: url(../img/img_product_pb.jpg);
+}
+.product-box{
+  height: 180px;
+  padding-top: 25px;
+  position: relative;
+}
+.product-box .product-box-tit{
+  font-weight: 700; font-size: 22px; line-height: 35px; color: #333;
+  text-align: center;
+}
+.product-box .product-box-wrap{
+  width: 454px; height: 145px;
+  position: absolute; left: 0; top: 60px;
+  transition: all 0.3s;
+}
+/* 
+position - 모든 속성을 이긴다.
+1.겹칠때
+2.역순일때
+3.명시적( top , right , bottom , left) 으로 이동 할 때(인터렉션할때)
+4.배치목적으로는 극단적으로 사용X
+*/
+.product-box .product-box-wrap > div{
+  float: left;
+  width: 227px;
+}
+.product-box .product-box-icon{
+  height: 129px;
+  padding-top: 16px;
+  text-indent: -9999px;/* 첫줄에만 적용됨 */
+}
+.product-box .product-box-icon:before{content: "";
+  display: block;
+  height: 59px;
+  margin: 0 auto 25px auto;
+  background: url(../img/icon_product.png) no-repeat;
+}
+.product-list:nth-child(1) .product-box-icon:before{
+  width: 71px;
+  background-position: 0 0;
+}
+.product-list:nth-child(2) .product-box-icon:before{
+  width: 46px;
+  background-position: -76px 0;
+}
+.product-list:nth-child(3) .product-box-icon:before{
+  width: 59px;
+  background-position: -127px 0;
+}
+.product-list:nth-child(4) .product-box-icon:before{
+  width: 60px;
+  background-position: -191px 0;
+}
+/* .product-box .processed:before{
+  width: 71px;
+  background-position: 0 0;
+}
+.product-box .pb:before{
+  width: 46px;
+  background-position: -76px 0;
+}
+.product-box .global:before{
+  width: 59px;
+  background-position: -127px 0;
+}
+.product-box .frozen:before{
+  width: 60px;
+  background-position: -191px 0;
+} */
+.product-box .product-box-icon span{
+  display: block;
+  height: 0;
+  /* text-indent: -9999px; *//* 인라인요소는 크기를 줄 수 없어서 인덴트가 적용되지 않는다 - 블럭으로 만들어줘야한다. */
+}
+.product-box .product-box-icon:after{content: "";
+  display: block;
+  width: 33px; height: 1px;
+  margin: 0 auto;
+  background-color: #aaa;
+}
+.product-box .product-box-contents{
+  height: 137px;
+  padding-top: 8px;
+  text-align: center;
+  position: relative;
+}
+.product-box .product-box-contents p{
+  padding: 0 30px; margin-bottom: 25px;
+  font-size: 16px; line-height: 24px; color: #555;
+}
+.product-box .product-box-contents a{
+  font-size: 14px; line-height: 27px; color: #777;
+}
+.product-box .product-box-contents:after{content: "";
+  width: 100%; height: 6px;
+  background: #ee3124;
+  position: absolute; left: 0; bottom: 0;
+}
+
+.product-list:hover .product-box-wrap{left: -227px;}
+
 /* .product-box .product-box-contents .product-box-txt{} */
 /* .product-box .product-box-contents .product-box-more{} */
 /* PRODUCT - E */
