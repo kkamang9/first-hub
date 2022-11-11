@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tabmenu01.css">
+
+</head>
+<body>
+  <div class="tabmenu">
+    <div class="tabmenu1">
+      <strong class="tabmenu-tit"><a href="#">공지사항</a></strong>
+      <div class="tabmenu-box">
+        블라블라 솰라솰라
+      </div>
+    </div>
+    <div class="tabmenu2">
+      <strong class="tabmenu-tit"><a href="#">최근소식</a></strong>
+      <div class="tabmenu-box">
+        마뫄마뫄 롸라롸라
+      </div>
+    </div>
+    <div class="tabmenu3">
+      <strong class="tabmenu-tit"><a href="#">언론보도</a></strong>
+      <div class="tabmenu-box">
+        위기위기 허기워기
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script>
+    $(function(){    
+      $('.tabmenu-tit').on('click' , function(){
+        $('.tabmenu-box').hide();
+        $(this).next().fadeIn();
+      })
+    })
+  </script>
+
+
+</body>
+</html>

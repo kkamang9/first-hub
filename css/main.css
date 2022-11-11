@@ -1,6 +1,18 @@
 @charset "UTF-8";
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
 
+/* 
+속성순서
+1.display 및 & 레이아웃 관련
+2.크기
+3.마진 패딩
+4.보더
+5.텍스트
+6.배경
+7.포지션
+8.기타등등
+*/
+
 /* COMMON - S */
 a{text-decoration: none; color: inherit;}
 
@@ -28,7 +40,10 @@ body {font: 16px / 1 'NanumSquare', sans-serif, '돋움', dotum, AppleGothic, sa
 /* COMMON - E */
 
 /* MAINCOMMON - S */
-.sec{padding: 80px 0;}
+.sec{
+  padding: 80px 0;
+  min-width: 1180px;
+}
 .sec:after {content: ""; clear: both; display: block;}
 .sec-header{
   text-align: center;
@@ -347,5 +362,93 @@ position - 모든 속성을 이긴다.
 /* .product-box .product-box-contents .product-box-txt{} */
 /* .product-box .product-box-contents .product-box-more{} */
 /* PRODUCT - E */
+
+/* INFRA - S */
+.infra{
+  background: url(../img/bg_product.jpg) no-repeat center bottom;
+}
+.infra-wrap{}
+.infra-list{
+  float: left;
+  width: 388px; height: 388px;
+  background-color: #000;
+  position: relative;
+}
+.infra-list + .infra-list{margin-left: 8px;}
+.infra-box{
+  width: 388px; height: 314px;
+  color: #fff;  text-align: center;
+  position: absolute; left: 0; top: 60px; z-index: 10;
+  transition: all 0.3s;
+}
+.infra-box .infra-box-tit{
+  width: 100%;
+  font-weight: 800; font-size: 30px; line-height: 45px;
+  position: absolute; left: 0; top: 112px;
+}
+.infra-box .infra-box-wrap{
+  opacity: 0;
+  padding-top: 50px;
+  transition: all 0.3s;
+}
+.infra-box .infra-box-wrap:before{content: "";
+  display: block;
+  margin: 0 auto 68px auto;
+  height: 52px;
+  background: url(../img/icon_infra.png);
+}
+.infra-list:nth-child(1) .infra-box-wrap:before{
+  width: 60px;
+  background-position: -150px 0;
+}
+.infra-list:nth-child(2) .infra-box-wrap:before{
+  width: 36px;
+  background-position: -88px 0;
+}
+.infra-list:nth-child(3) .infra-box-wrap:before{
+  width: 32px;
+  background-position: -16px 0;
+}
+.infra-box .infra-box-txt{
+  width: 220px;
+  margin: 0 auto 32px auto;
+  line-height: 24px;
+}
+.infra-box .infra-box-more{
+  display: block;
+  width: 118px; height: 38px;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  font-size: 14px; line-height: 38px;
+  transition: all 0.3s;
+}
+.infra-img{
+  transition: all 0.3s;
+}
+.infra-img img{}
+
+.infra-list:hover .infra-box {top: 0; }
+.infra-list:hover .infra-box-wrap{opacity: 1;}
+.infra-list:hover .infra-img{opacity: 0.25;}
+.infra-box .infra-box-more:hover {
+  color: #000;
+  background-color: #fff;
+}
+/* INFRA - E */
+
+/* CHEF - S */
+.chef{}
+.chef-wrap{}
+.chef-list{}
+.chef-box{}
+.chef-box .chef-box-tit{}
+.chef-box .chef-box-menu{}
+.chef-btn{}
+.chef-btn .chef-btn-wrap{}
+.chef-btn .chef-btn-recipe{}
+.chef-btn .chef-btn-box a{}
+.chef-btn .chef-btn-img{}
+.chef-btn .chef-btn-img img{}
+/* CHEF - E */
 
 /* MAIN - E */
